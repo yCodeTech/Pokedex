@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pokemon</title>
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/script.js" type="module"></script>
+	</head>
+	<body>
+		<div class="bar-container">
+			<div class="top-bar fixed-bar">
+				<div class="title">
+					<img
+						src="https://user-images.githubusercontent.com/29473781/180619084-a56960ab-7efa-4e34-9d33-4e3e581d62ff.png"
+						data-reference="https://github.com/CodesdaLu/pokedex" />
+				</div>
+				<div class="search">
+					<div class="col">
+						<label for="search">Search Pokemon by name or number</label>
+
+						<div class="col">
+							<i class="search__icon fa-solid fa-magnifying-glass"></i>
+							<input type="search" class="search__input" id="search" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="pokemon-container">
+				<ul id="pokemon"></ul>
+				<button type="button" id="loadMoreBtn">Load More</button>
+			</div>
+			<div class="bar-container">
+				<div class="bottom-bar fixed-bar">
+					<div class="bottom-bar__item bottom-bar__item--favourites">
+						<i class="fa-regular fa-star fa-solid"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

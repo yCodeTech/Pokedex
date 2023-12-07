@@ -1,0 +1,22 @@
+@mixin row($wrap: "true") {
+	display: flex;
+
+	@if $wrap == "true" {
+		flex-flow: row wrap;
+	} @else {
+		flex-flow: row;
+	}
+}
+@mixin col {
+	display: flex;
+	flex-flow: column;
+}
+@mixin font-size($size) {
+	font-size: $size;
+}
+@mixin justify-content-center {
+	justify-content: center;
+}
+@mixin d-block {
+	display: block;
+}

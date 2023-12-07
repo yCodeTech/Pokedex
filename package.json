@@ -1,0 +1,21 @@
+{
+	"name": "assignment",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"watch": "sass --watch scss/main.scss:css/main.css scss/details.scss:css/details.css --load-path=node_modules",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"prettier": "^3.0.3",
+		"sass": "^1.69.4"
+	},
+	"dependencies": {
+		"animate.css": "^4.1.1",
+		"reset-css": "^5.0.2"
+	}
+}

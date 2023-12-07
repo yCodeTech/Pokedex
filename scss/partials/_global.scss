@@ -1,0 +1,11 @@
+@use "mixins" as *;
+
+.d-none {
+	display: none !important;
+}
+.col {
+	@include col;
+}
+.row {
+	@include row;
+}

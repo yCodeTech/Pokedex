@@ -1,0 +1,120 @@
+@use "./partials/global";
+@use "./partials/mixins" as *;
+@use "./partials/card";
+@use "./partials/colours" as *;
+
+@use "animate.css/animate";
+@use "reset-css/reset";
+
+* {
+	box-sizing: border-box;
+}
+.container {
+	@include col;
+}
+.bar-container {
+	$topBarHeight: 150px;
+	&:first-child {
+		height: $topBarHeight;
+	}
+
+	$favHeight: 50px;
+	&:last-child {
+		height: $favHeight;
+	}
+
+	.fixed-bar {
+		position: fixed;
+		background: #e9e9e9;
+		width: 100%;
+		z-index: 999;
+		box-shadow: 0px 0px 16px 0px #0000003b;
+
+		&.top-bar {
+			@include col;
+			align-items: center;
+			justify-content: space-around;
+			top: 0;
+			gap: 10px;
+			padding: 15px;
+			height: $topBarHeight;
+
+			@media screen and (min-width: 700px) {
+				@include row($wrap: "false");
+			}
+
+			.title {
+				width: 150px;
+				img {
+					max-width: 100%;
+				}
+			}
+			.search {
+				@include row;
+				@include justify-content-center;
+
+				align-items: center;
+				gap: 1rem;
+
+				.col:first-child {
+					width: 100%;
+					label {
+						text-align: center;
+					}
+				}
+				.col:last-child {
+					@include justify-content-center;
+				}
+				&__input {
+					border-radius: 2rem;
+					padding: 0.5rem 1rem 0.5rem 2rem;
+				}
+				&__icon {
+					position: absolute;
+					width: 20px;
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+	.bottom-bar {
+		bottom: 0;
+
+		&__item {
+			@include row;
+			@include justify-content-center;
+
+			align-items: center;
+			width: 50px;
+			height: $favHeight;
+			background: #ccc;
+			font-size: 1.5rem;
+
+			&--favourites {
+				color: $star;
+			}
+		}
+	}
+}
+.pokemon-container {
+	padding: 3rem;
+	padding-bottom: 4rem;
+}
+#pokemon {
+	@include row;
+	@include justify-content-center;
+
+	list-style: none;
+	padding: 0;
+	gap: 20px;
+}
+
+#loadMoreBtn {
+	@include d-block;
+	@include font-size(2rem);
+
+	margin: auto;
+	border: none;
+	width: 100%;
+	padding: 0.5rem;
+}

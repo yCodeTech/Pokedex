@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Pokemon</title>
+
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/details.css" />
+		<script src="js/details.js" type="module"></script>
+	</head>
+	<body>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			xml:space="preserve"
+			class="pokeball pokeball--closed animate__animated animate__delay-2s"
+			x="0"
+			y="0"
+			version="1.1"
+			viewBox="0 0 16.8 16.8">
+			<g>
+				<g>
+					<path d="M0 8.9c.2 4.4 3.9 7.9 8.4 7.9s8.2-3.6 8.4-7.9H0z" class="off-white" />
+					<path fill="#cfd8dc" d="M8.4 16.8c4.6 0 8.4-3.8 8.4-8.4 0 0-.1 6.7-8.4 6.7S0 8.4 0 8.4c0 4.6 3.8 8.4 8.4 8.4z" />
+				</g>
+				<path fill="#ef4423" d="M8.4 0C4 0 .3 3.6 0 7.9h16.8c-.3-4.3-4-7.9-8.4-7.9z" />
+				<path d="M16.8 7.9H0v1-.4c0 .1 0 .2.1.4h16.7v-1z" class="rim-colour" />
+				<g>
+					<circle cx="8.3" cy="8.5" r="2.5" class="rim-colour" />
+					<circle cx="8.3" cy="8.5" r="1.7" class="off-white" />
+					<circle cx="8.3" cy="8.5" r=".8" class="rim-colour" />
+				</g>
+			</g>
+		</svg>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			xml:space="preserve"
+			class="pokeball pokeball--open animate__animated animate__faster hidden"
+			x="0"
+			y="0"
+			version="1.1"
+			viewBox="0 0 16.8 16.8">
+			<g id="top">
+				<path fill="#ef4423" d="M8.4 0C3.8 0 0 3.8 0 8.4h16.8C16.8 3.8 13 0 8.4 0z" />
+				<path fill="#90a4ae" d="M.4 8.4c0 1.9 3.6 3.4 8 3.4s8-1.5 8-3.4H.4z" />
+				<path fill="#546f7a" d="M8.4 5C4 5 .4 6.5.4 8.4h16c0-1.9-3.6-3.4-8-3.4z" />
+				<path d="M8.4 5.5C12.8 5.5 16 7 16 8.4h.8c0-2.1-3.7-3.8-8.4-3.8S0 6.3 0 8.4h.8C.8 7 3.9 5.5 8.4 5.5z" class="rim-colour" />
+				<circle cx="8.4" cy="5" r="2.5" class="rim-colour" />
+				<circle cx="8.4" cy="5" r="1.7" class="off-white" />
+				<circle cx="8.4" cy="5" r=".8" class="rim-colour" />
+			</g>
+			<g>
+				<path
+					d="M16.2 9.8c-.9 1.1-2.9 1.9-5.3 2.2-.1 1.3-1.2 2.3-2.5 2.3S6 13.3 5.9 12c-2.2-.3-4-1-5-1.9C.3 9.6 0 9 0 8.4c0 4.6 3.8 8.4 8.4 8.4 4.6 0 8.3-3.7 8.4-8.2-.1.4-.2.8-.6 1.2z"
+					class="off-white" />
+				<path
+					d="M5.9 12c.1 1.3 1.2 2.3 2.5 2.3s2.4-1 2.5-2.3c2.5-.3 4.4-1.2 5.3-2.2.3-.4.5-.8.6-1.2v-.2H16c0 1.4-3.1 2.9-7.6 2.9S.8 9.8.8 8.4H0c0 .6.3 1.2.9 1.7 1 .9 2.8 1.6 5 1.9z"
+					class="rim-colour" />
+				<path fill="#cfd8dc" d="M8.4 16.8c4.6 0 8.4-3.8 8.4-8.4 0 0-.1 6.7-8.4 6.7S0 8.4 0 8.4c0 4.6 3.8 8.4 8.4 8.4z" />
+			</g>
+		</svg>
+
+		<h1 id="name"></h1>
+		<div id="details">
+			<div id="number"></div>
+			<ul id="types"></ul>
+		</div>
+		<script src="js/details.js" type="module"></script>
+	</body>
+</html>
