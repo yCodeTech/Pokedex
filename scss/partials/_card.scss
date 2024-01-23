@@ -26,24 +26,16 @@
 		align-items: center;
 	}
 	&__number {
+		font-family: "Times New Roman", Times, serif;
 		font-size: 1rem;
 		vertical-align: super;
 		z-index: 1;
 		color: white;
 	}
 	& &__favourite {
+		@include favourite();
 		font-size: 1.5rem;
-		z-index: 1;
-
-		.fa-star {
-			color: $off-white;
-			&.fa-solid {
-				color: $star;
-				filter: drop-shadow(0px 1px 1px #0000005c);
-			}
-		}
 	}
-
 	&__img-container {
 		height: $cardHeight;
 		margin: auto;
@@ -81,24 +73,6 @@
 	}
 
 	&__pokemon-types {
-		@include row($wrap: "false");
-		gap: 0.5rem;
-		margin-top: 20px;
-
-		&__item {
-			display: flex;
-			@include justify-content-center;
-			border-radius: 2rem;
-			width: 50%;
-			height: 30px;
-			padding: 0.5rem;
-			color: white;
-			align-items: center;
-			gap: 10px;
-
-			svg {
-				height: 16px;
-			}
-		}
+		@include pokemon-types();
 	}
 }

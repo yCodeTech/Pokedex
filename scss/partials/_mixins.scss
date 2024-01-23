@@ -1,3 +1,5 @@
+@use "./colours" as *;
+
 @mixin row($wrap: "true") {
 	display: flex;
 
@@ -19,4 +21,37 @@
 }
 @mixin d-block {
 	display: block;
+}
+
+@mixin pokemon-types {
+	@include row($wrap: "false");
+	gap: 0.5rem;
+	margin-top: 20px;
+
+	&__item {
+		display: flex;
+		@include justify-content-center;
+		border-radius: 2rem;
+		width: 50%;
+		height: 30px;
+		padding: 0.5rem;
+		color: white;
+		align-items: center;
+		gap: 10px;
+
+		svg {
+			height: 16px;
+		}
+	}
+}
+@mixin favourite {
+	z-index: 1;
+
+	.fa-star {
+		color: $off-white;
+		&.fa-solid {
+			color: $star;
+			filter: drop-shadow(0px 1px 1px #0000005c);
+		}
+	}
 }

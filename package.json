@@ -1,5 +1,5 @@
 {
-	"name": "assignment",
+	"name": "pokedex",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
@@ -11,7 +11,9 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"@prettier/sync": "^0.3.0",
 		"prettier": "^3.0.3",
+		"prettier-plugin-brace-style": "^0.3.2",
 		"sass": "^1.69.4"
 	},
 	"dependencies": {

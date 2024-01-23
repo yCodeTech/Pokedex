@@ -7,10 +7,15 @@ export function favourite(event) {
 	event.preventDefault();
 
 	const fav = event.currentTarget;
-	const favIcon = fav.childNodes[0];
+	const favIcon = fav.querySelector("i");
 	const theCard = event.currentTarget.closest(".card");
-
-	const name = theCard.id;
+	let name = "";
+	if (!util.isDetailsPage()) {
+		name = theCard.id;
+	}
+	else {
+		name = document.querySelector("body").id;
+	}
 
 	let favourited = [];
 	const stored = util.getFavouritedPokemon();
@@ -27,7 +32,6 @@ export function favourite(event) {
 
 		setFavouritesToLocalStorage(favourited);
 	}
-	// Remove Pokemon from Favourites.
 	else {
 		favourited = stored.filter((element) => {
 			return element.name != name;
@@ -36,29 +40,27 @@ export function favourite(event) {
 		favIcon.removeClass("fa-solid");
 
 		setFavouritesToLocalStorage(favourited);
+
+		// Only on the favourites page.
+		if (util.isFavouritesPage()) {
+			theCard.remove();
+		}
 	}
 }
 function setFavouritesToLocalStorage(data) {
 	localStorage.setItem("favouritedPokemon", JSON.stringify(data));
 }
 
-export function setIconForFavourited() {
+export function setIconForFavourited(pokemonId, favIcon) {
 	const favourited = util.getFavouritedPokemon();
 
-	console.log(favourited);
-
 	if (favourited != null) {
-		const cards = document.querySelectorAll(".card");
-		cards.forEach((card) => {
-			favourited.forEach((fav) => {
-				const name = fav.name.toLowerCase();
-				if (card.id === name) {
-					const cardFav = document.querySelector(`#${name} .card__favourite i`);
-					cardFav.addClass("fa-solid");
-				}
-			});
+		favourited.forEach((fav) => {
+			const name = fav.name.toLowerCase();
+			if (pokemonId === name) {
+				// const favIcon = document.querySelector(`#${name} .${favouriteClass} i`);
+				favIcon.addClass("fa-solid");
+			}
 		});
 	}
 }
-
-// TODO: create the favourite sidebar.

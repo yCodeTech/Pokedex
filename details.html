@@ -14,64 +14,207 @@
 			referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/details.css" />
-		<script src="js/details.js" type="module"></script>
 	</head>
 	<body>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			xml:space="preserve"
-			class="pokeball pokeball--closed animate__animated animate__delay-2s"
-			x="0"
-			y="0"
-			version="1.1"
-			viewBox="0 0 16.8 16.8">
-			<g>
-				<g>
-					<path d="M0 8.9c.2 4.4 3.9 7.9 8.4 7.9s8.2-3.6 8.4-7.9H0z" class="off-white" />
-					<path fill="#cfd8dc" d="M8.4 16.8c4.6 0 8.4-3.8 8.4-8.4 0 0-.1 6.7-8.4 6.7S0 8.4 0 8.4c0 4.6 3.8 8.4 8.4 8.4z" />
-				</g>
-				<path fill="#ef4423" d="M8.4 0C4 0 .3 3.6 0 7.9h16.8c-.3-4.3-4-7.9-8.4-7.9z" />
-				<path d="M16.8 7.9H0v1-.4c0 .1 0 .2.1.4h16.7v-1z" class="rim-colour" />
-				<g>
-					<circle cx="8.3" cy="8.5" r="2.5" class="rim-colour" />
-					<circle cx="8.3" cy="8.5" r="1.7" class="off-white" />
-					<circle cx="8.3" cy="8.5" r=".8" class="rim-colour" />
-				</g>
-			</g>
-		</svg>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			xml:space="preserve"
-			class="pokeball pokeball--open animate__animated animate__faster hidden"
-			x="0"
-			y="0"
-			version="1.1"
-			viewBox="0 0 16.8 16.8">
-			<g id="top">
-				<path fill="#ef4423" d="M8.4 0C3.8 0 0 3.8 0 8.4h16.8C16.8 3.8 13 0 8.4 0z" />
-				<path fill="#90a4ae" d="M.4 8.4c0 1.9 3.6 3.4 8 3.4s8-1.5 8-3.4H.4z" />
-				<path fill="#546f7a" d="M8.4 5C4 5 .4 6.5.4 8.4h16c0-1.9-3.6-3.4-8-3.4z" />
-				<path d="M8.4 5.5C12.8 5.5 16 7 16 8.4h.8c0-2.1-3.7-3.8-8.4-3.8S0 6.3 0 8.4h.8C.8 7 3.9 5.5 8.4 5.5z" class="rim-colour" />
-				<circle cx="8.4" cy="5" r="2.5" class="rim-colour" />
-				<circle cx="8.4" cy="5" r="1.7" class="off-white" />
-				<circle cx="8.4" cy="5" r=".8" class="rim-colour" />
-			</g>
-			<g>
-				<path
-					d="M16.2 9.8c-.9 1.1-2.9 1.9-5.3 2.2-.1 1.3-1.2 2.3-2.5 2.3S6 13.3 5.9 12c-2.2-.3-4-1-5-1.9C.3 9.6 0 9 0 8.4c0 4.6 3.8 8.4 8.4 8.4 4.6 0 8.3-3.7 8.4-8.2-.1.4-.2.8-.6 1.2z"
-					class="off-white" />
-				<path
-					d="M5.9 12c.1 1.3 1.2 2.3 2.5 2.3s2.4-1 2.5-2.3c2.5-.3 4.4-1.2 5.3-2.2.3-.4.5-.8.6-1.2v-.2H16c0 1.4-3.1 2.9-7.6 2.9S.8 9.8.8 8.4H0c0 .6.3 1.2.9 1.7 1 .9 2.8 1.6 5 1.9z"
-					class="rim-colour" />
-				<path fill="#cfd8dc" d="M8.4 16.8c4.6 0 8.4-3.8 8.4-8.4 0 0-.1 6.7-8.4 6.7S0 8.4 0 8.4c0 4.6 3.8 8.4 8.4 8.4z" />
-			</g>
-		</svg>
-
-		<h1 id="name"></h1>
-		<div id="details">
-			<div id="number"></div>
-			<ul id="types"></ul>
+		<div class="bar-container">
+			<div class="top-bar fixed-bar">
+				<div class="title">
+					<!--
+						Pokedex logo from
+						https://github.com/CodesdaLu/pokedex
+					-->
+					<img src="/images/Pokedex logo.png" data-reference="https://github.com/CodesdaLu/pokedex" />
+				</div>
+				<div class="top-bar__pokemon-details row">
+					<div class="back-btn">
+						<i class="fa-solid fa-arrow-left-long fa-2x"></i>
+					</div>
+					<div class="col">
+						<h1 class="top-bar__pokemon-details__name"></h1>
+						<div class="top-bar__pokemon-details__number"></div>
+					</div>
+					<div class="favourite-btn">
+						<i class="fa-regular fa-star fa-2x"></i>
+					</div>
+				</div>
+			</div>
 		</div>
+		<div class="details-container">
+			<div class="pokemon-img">
+				<!--
+					Original Open Pokeball SVG from https://copyicon.com/icons/open-pokeball/69026 and edited by me in Illustrator to create the closed version.
+				-->
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					xml:space="preserve"
+					class="pokeball pokeball--closed animate__animated animate__delay-2s"
+					x="0"
+					y="0"
+					version="1.1"
+					viewBox="0 0 16.8 16.8">
+					<g>
+						<g>
+							<path d="M0 8.9c.2 4.4 3.9 7.9 8.4 7.9s8.2-3.6 8.4-7.9H0z" class="off-white" />
+							<path fill="#cfd8dc" d="M8.4 16.8c4.6 0 8.4-3.8 8.4-8.4 0 0-.1 6.7-8.4 6.7S0 8.4 0 8.4c0 4.6 3.8 8.4 8.4 8.4z" />
+						</g>
+						<path fill="#ef4423" d="M8.4 0C4 0 .3 3.6 0 7.9h16.8c-.3-4.3-4-7.9-8.4-7.9z" />
+						<path d="M16.8 7.9H0v1-.4c0 .1 0 .2.1.4h16.7v-1z" class="rim-colour" />
+						<g>
+							<circle cx="8.3" cy="8.5" r="2.5" class="rim-colour" />
+							<circle cx="8.3" cy="8.5" r="1.7" class="off-white" />
+							<circle cx="8.3" cy="8.5" r=".8" class="rim-colour" />
+						</g>
+					</g>
+				</svg>
+				<!--
+					Original Open Pokeball SVG from https://copyicon.com/icons/open-pokeball/69026 and edited by me in Illustrator.
+				-->
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					xml:space="preserve"
+					class="pokeball pokeball--open animate__animated animate__faster hidden"
+					x="0"
+					y="0"
+					version="1.1"
+					viewBox="0 0 16.8 16.8">
+					<g id="top">
+						<path fill="#ef4423" d="M8.4 0C3.8 0 0 3.8 0 8.4h16.8C16.8 3.8 13 0 8.4 0z" />
+						<path fill="#90a4ae" d="M.4 8.4c0 1.9 3.6 3.4 8 3.4s8-1.5 8-3.4H.4z" />
+						<path fill="#546f7a" d="M8.4 5C4 5 .4 6.5.4 8.4h16c0-1.9-3.6-3.4-8-3.4z" />
+						<path d="M8.4 5.5C12.8 5.5 16 7 16 8.4h.8c0-2.1-3.7-3.8-8.4-3.8S0 6.3 0 8.4h.8C.8 7 3.9 5.5 8.4 5.5z" class="rim-colour" />
+						<circle cx="8.4" cy="5" r="2.5" class="rim-colour" />
+						<circle cx="8.4" cy="5" r="1.7" class="off-white" />
+						<circle cx="8.4" cy="5" r=".8" class="rim-colour" />
+					</g>
+					<g>
+						<path
+							d="M16.2 9.8c-.9 1.1-2.9 1.9-5.3 2.2-.1 1.3-1.2 2.3-2.5 2.3S6 13.3 5.9 12c-2.2-.3-4-1-5-1.9C.3 9.6 0 9 0 8.4c0 4.6 3.8 8.4 8.4 8.4 4.6 0 8.3-3.7 8.4-8.2-.1.4-.2.8-.6 1.2z"
+							class="off-white" />
+						<path
+							d="M5.9 12c.1 1.3 1.2 2.3 2.5 2.3s2.4-1 2.5-2.3c2.5-.3 4.4-1.2 5.3-2.2.3-.4.5-.8.6-1.2v-.2H16c0 1.4-3.1 2.9-7.6 2.9S.8 9.8.8 8.4H0c0 .6.3 1.2.9 1.7 1 .9 2.8 1.6 5 1.9z"
+							class="rim-colour" />
+						<path fill="#cfd8dc" d="M8.4 16.8c4.6 0 8.4-3.8 8.4-8.4 0 0-.1 6.7-8.4 6.7S0 8.4 0 8.4c0 4.6 3.8 8.4 8.4 8.4z" />
+					</g>
+				</svg>
+			</div>
+
+			<div class="details">
+				<!-- Placeholder for the types -->
+				<span></span>
+				<div class="basic-info">
+					<div class="row">
+						<div class="basic-info__item basic-info__item--height">
+							<div class="basic-info__item__title">Height</div>
+							<div class="basic-info__item__content"></div>
+						</div>
+
+						<div class="basic-info__item basic-info__item--weight">
+							<div class="basic-info__item__title">Weight</div>
+							<div class="basic-info__item__content"></div>
+						</div>
+
+						<div class="basic-info__item basic-info__item--gender">
+							<div class="basic-info__item__title">Gender</div>
+							<div class="basic-info__item__content">
+								<div class="row">
+									<i class="fa-solid fa-genderless genderless d-none" id="genderless"></i>
+									<i class="fa-solid fa-venus female" id="female"></i>
+									<i class="fa-solid fa-mars male" id="male"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="basic-info__item basic-info__item--ability">
+							<div class="basic-info__item__title">Ability</div>
+							<div class="basic-info__item__content">
+								<ul></ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="basic-info__item basic-info__item--category">
+							<div class="basic-info__item__title">Category</div>
+							<div class="basic-info__item__content"></div>
+						</div>
+
+						<div class="basic-info__item basic-info__item--legendary-status">
+							<div class="basic-info__item__title">Legendary</div>
+							<div class="basic-info__item__content">
+								<i class="fa-regular fa-circle-xmark false" id="false"></i>
+								<i class="fa-regular fa-circle-check true d-none" id="true"></i>
+							</div>
+						</div>
+
+						<div class="basic-info__item basic-info__item--mythical-status">
+							<div class="basic-info__item__title">Mythical</div>
+							<div class="basic-info__item__content">
+								<i class="fa-regular fa-circle-xmark false" id="false"></i>
+								<i class="fa-regular fa-circle-check true d-none" id="true"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="section section--description">
+					<h2 class="section__title">Description</h2>
+					<div class="section__content"></div>
+				</div>
+
+				<div class="section section--weak-against">
+					<h2 class="section__title">Weak Against</h2>
+					<div class="section__content row types"></div>
+				</div>
+
+				<div class="section section--stats">
+					<h2 class="section__title">
+						Stats
+						<span class="stat-btns">
+							<span class="stat-btns__base">Base</span>
+							<span class="stat-btns__max">Max</span>
+							<span class="stat-btns__both">Both</span>
+						</span>
+					</h2>
+					<div class="section__content stats"></div>
+				</div>
+
+				<div class="section section--evolution">
+					<h2 class="section__title">Evolution</h2>
+					<div class="section__content evolutions"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="bar-container">
+			<div class="bottom-bar fixed-bar">
+				<a class="bottom-bar__item bottom-bar__item--search active" href="./index.html">
+					<i class="fa-solid fa-magnifying-glass"></i>
+					<span class="bottom-bar__item__name">Search</span>
+				</a>
+				<a class="bottom-bar__item bottom-bar__item--pokeball" href="./generations.html">
+					<!-- 
+						Pokeball SVG icon from Noun Project
+						https://thenounproject.com/icon/pokeball-594337/
+
+						The actual SVG code just copy/paste from the downloaded file but cleaned up by was cleaned up by SVGOMG
+						https://jakearchibald.github.io/svgomg/
+					-->
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-reference="https://thenounproject.com/icon/pokeball-594337/">
+						<path
+							d="M36.489 48.283c1.397-6.445 7.305-11.387 14.181-11.387s12.676 4.941 14.179 11.387h23.638c-1.649-19.873-18.33-35.558-38.62-35.558-20.291 0-36.972 15.686-38.619 35.559h25.241zM64.849 54.729c-1.395 6.446-7.41 11.387-14.286 11.387s-12.676-4.94-14.182-11.387H11.248c1.647 19.875 18.328 35.559 38.619 35.559 20.29 0 36.971-15.684 38.619-35.559H64.849z" />
+						<path
+							d="M42.507 51.506a8.16 8.16 0 0 0 8.163 8.164c4.513 0 8.164-3.652 8.164-8.164s-3.651-8.164-8.164-8.164a8.16 8.16 0 0 0-8.163 8.164z" />
+					</svg>
+					<span class="bottom-bar__item__name">Generations</span>
+				</a>
+				<a class="bottom-bar__item bottom-bar__item--favourites" href="./favourites.html">
+					<i class="fa-regular fa-star fa-solid"></i>
+					<span class="bottom-bar__item__name">Favourites</span>
+				</a>
+			</div>
+		</div>
+
 		<script src="js/details.js" type="module"></script>
 	</body>
 </html>

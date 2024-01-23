@@ -9,3 +9,6 @@
 .row {
 	@include row;
 }
+.hidden {
+	opacity: 0;
+}

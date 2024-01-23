@@ -45,19 +45,88 @@ interface Element extends ParentNode {
 
 interface String {
 	/**
- * toSentenceCase()
-*
- * A custom method on the String Prototype.
- * 
- * ---
- * Converts a string to sentence case, ie. converts the first letter of the
- * string to uppercase.
+	 * toSentenceCase()
+	 *
+	 * A custom method on the String Prototype.
+	 * 
+	 * ---
+	 * Converts a string to sentence case, 
+	 * ie. converts the first letter of the each sentence of the string to uppercase.
 
- * @example const myString = "my string is this";
- * myString.toSentenceCase();
- * // Returns: "My string is this"
- *
- * @returns {string} The sentence cased string.
- */
+	* @example const myString = "my string is this";
+	* myString.toSentenceCase();
+	* // Returns: "My string is this"
+	*
+	* const sentences = "this is a sentence. this is another sentence."
+	* sentences.toSentenceCase();
+	* // Returns: "This is a sentence. This is another sentence."
+	*
+	* @returns {string} The sentence cased string.
+	*/
 	toSentenceCase(): string;
+
+	/**
+	 * toTitleCase()
+	 * 
+	 * A custom method on the String Prototype.
+	 * 
+	 * ---
+	 * Converts a string to title case, 
+	 * ie. converts the first letter of each word of the string to uppercase.
+	 * 
+	 * Code from https://stackoverflow.com/a/196991/2358222
+	 * 
+	 * @example const myString = "my string is this";
+	 * myString.toTitleCase();
+	 * // Returns: "My String Is This"
+	 *
+	 * @returns {string} The title cased string.
+	 */
+	toTitleCase(): string;
+
+
+	/**
+	 * addLeadingZeros()
+	 *
+	 * A custom method on the String Prototype.
+	 *
+	 * ---
+	 * Adds leading zeros if necessary to the number to make it 4 digits.
+	 *
+	 * @example const num = "4";
+	 * const largeNum = "230";
+	 *
+	 * num.addLeadingZeros();
+	 * // Returns: "0004"
+	 *
+	 * largeNum.addLeadingZeros();
+	 * // Returns: "0230"
+	 *
+	 * @returns {string} The string of a number (made up of 4 digits) with the leading zeros.
+	 */
+	addLeadingZeros(): string;
+}
+
+interface Number {
+	/**
+	 * addLeadingZeros()
+	 *
+	 * A custom method on the Number Prototype.
+	 *
+	 * ---
+	 * Converts a number to a string and adds leading zeros if necessary to make the number 4 digits.
+	 *
+	 * @example
+	 * const num = 5;
+	 * const largeNum = 230;
+	 *
+	 * num.addLeadingZeros();
+	 * // Returns: "0005"
+	 *
+	 * largeNum.addLeadingZeros();
+	 * // Returns: "0230"
+	 *
+	 * @returns {string} The string of a number (made up of 4 digits) with the leading zeros.
+	 */
+	addLeadingZeros(): string;
 }

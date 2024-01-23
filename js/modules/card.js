@@ -47,10 +47,6 @@ export class Card {
 				tag: "span",
 				class: "card__name",
 			},
-			types: {
-				tag: "div",
-				class: "card__pokemon-types",
-			},
 		};
 
 		this.element = this.create();
@@ -108,11 +104,6 @@ export class Card {
 		this.children.inner.appendChild(this.children.name);
 
 		/**
-		 * Types
-		 */
-		this.children.inner.appendChild(this.children.types);
-
-		/**
 		 * Inner and Link
 		 */
 		this.children.link.appendChild(this.children.inner);
@@ -142,7 +133,8 @@ export class Card {
 		if (typeof content === "function") {
 			const callback = content;
 			callback();
-		} else {
+		}
+		else {
 			this.addContent(key, content);
 		}
 		return this;
@@ -150,7 +142,8 @@ export class Card {
 	createImg(imgURL) {
 		if (imgURL) {
 			this.addAttrs("img", "src", imgURL);
-		} else {
+		}
+		else {
 			this.addContent("imgContainer", "New Pokemon image coming soon.");
 		}
 	}

@@ -1,9 +1,12 @@
 @use "sass:list";
+@use "sass:color";
 
 $black: black;
 $grey: #ccc;
 $star: #ffdf37;
 $off-white: #f7f7f7;
+$dark-grey: #505050;
+$dark-grey--opacity: rgba($dark-grey, 0.8);
 
 /* Pokemon Types colours */
 
@@ -32,6 +35,19 @@ $types: (
 
 @each $name, $type in $types {
 	.#{$name} {
-		background: $type;
+		background: $type !important;
+
+		&.active {
+			box-shadow: 0 0 20px $type;
+		}
+	}
+	.#{$name}--opacity {
+		background: rgba($type, 0.8) !important;
+	}
+	.#{$name}--light {
+		background: color.adjust($type, $lightness: +20%) !important;
+	}
+	.#{$name}--dark {
+		background: color.adjust($type, $lightness: -10%) !important;
 	}
 }
