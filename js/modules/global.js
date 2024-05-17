@@ -71,7 +71,7 @@ function displayFilteringIcons() {
 		// So it prevents errors.
 		const newTypesData = typesData.filter((type) => {
 			const typeName = type.name;
-			if (typeName != "unknown" && typeName != "shadow") {
+			if (typeName != "unknown" && typeName != "shadow" && typeName != "stellar") {
 				return true;
 			}
 		});
